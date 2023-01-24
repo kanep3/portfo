@@ -50,7 +50,6 @@
     ]
   },
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kanep3/kane.pe.git"
