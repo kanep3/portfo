@@ -3,10 +3,12 @@
 body {
     display: flex;
     height: 100vh;
+    overflow: hidden;
     overflow-x: hidden;
     overflow-y: scroll;
     color: white;
-    background-color: #1C1C1E;
+    background-color: #1A1A1B;
+    font-family: 'Lato', sans-serif;
 }
 
 .left-section {
@@ -26,9 +28,96 @@ body {
     align-items: center;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     margin: 0;
 }
+
+h1 {
+    font-size: 44px;
+    font-weight: 450;
+    margin-bottom: 0px;
+
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+h4 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #da1387;
+    background: 
+    linear-gradient(90deg,#19a5d4 50%,#000 0) 
+    var(--_p,100%)/200% no-repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: .5s;
+}
+
+.colored-word {
+    color: #13DA66;
+}
+
+.gradient-word {
+    background-image: linear-gradient(90deg, #13DA66, #da1387);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.gradient-word:hover {
+    color: #da1387;
+}
+
+.numeral {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.name {
+    color: #13DA66;
+    --c: #da1387;
+    --s: .15em;
+    
+    line-height:1.1em;
+    padding-bottom: calc(2.1*var(--s));
+    background: 
+      conic-gradient(from 135deg at top,var(--c) 90deg,#0000 0) 
+        left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+      conic-gradient(from -45deg at bottom,var(--c) 90deg,#0000 0) 
+        left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+    transition: .5s;
+  }
+  .name:hover {
+    --_p: 100%;
+    color: var(--c);
+  }
+
 
 /* Title Page */
 
@@ -37,85 +126,61 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     margin-bottom: 20px;
+    margin-left: 25%;
+    margin-right: 10%;
 }
 
-.title-page h1 {
-    font-size: 36px;
-    font-weight: bold;
-    background-image: linear-gradient(to right, transparent 0%, transparent 50%, #FF453A 50%, #FF453A 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
 
-.title-page h2 {
-    font-size: 24px;
-    font-weight: normal;
+
+.title-page p {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 /* Education Section */
 
 .education-section {
-    margin-bottom: 20px;
-    height: 100vh;
-}
-
-.education-section h3 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.education-section p {
-    font-size: 16px;
-    line-height: 1.5;
+    margin-left: 25%;
+    margin-right: 10%;
+    margin-bottom: 250px;
 }
 
 /* Projects Section */
 
 .projects-section {
-    margin-bottom: 20px;
+    margin-left: 25%;
+    margin-right: 10%;
+    margin-bottom: 70px;
 }
 
-.projects-section h3 {
-    font-size: 24px;
-    font-weight: bold;
-}
 
 .project {
-    margin-bottom: 10px;
+    margin-bottom: 100px;
 }
 
-.project h4 {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.project p {
-    font-size: 16px;
-    line-height: 1.5;
-}
 
 /* Contact Section */
 
 .contact-section {
-    margin-bottom: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top: -30vh;
+    margin-left: 25%;
+    margin-right: 10%;
 }
 
-.contact-section h3 {
-    font-size: 24px;
-    font-weight: bold;
-}
 
 .contact-info {
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.contact-info h4 {
-    font-size: 20px;
-    font-weight: bold;
-}
 
 /* Fixed Window */
 
@@ -129,3 +194,49 @@ h1, h2, h3, h4 {
     height: auto;
 }
 
+.white-circle {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+#blob {
+    height: 30vmax;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(36, 123, 94), rgb(95, 34, 120));
+    animation: rotate 10s infinite;
+    opacity: 0.8;
+    z-index: -2;
+}
+
+#blur {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    backdrop-filter: blur(12vmax);
+}
