@@ -1,4 +1,4 @@
-/* -- Cursor glow effect -- */
+// Cursor glow
 
 const blob = document.getElementById("blob");
 

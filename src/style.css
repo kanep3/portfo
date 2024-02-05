@@ -23,9 +23,9 @@ body {
     height: 100%;
     position: fixed;
     right: 0;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 h1, h2, h3, h4, h5 {
@@ -116,10 +116,11 @@ a:hover {
       linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
     transition: .5s;
   }
-  .name:hover {
-    --_p: 100%;
-    color: var(--c);
-  }
+
+.name:hover {
+--_p: 100%;
+color: var(--c);
+}
 
 
 /* Title Page */
@@ -178,31 +179,18 @@ a:hover {
     margin-right: 10%;
 }
 
-
 .contact-info {
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
 
-/* Fixed Window */
+canvas {
+    display: block;
+  }
 
-.fixed-window {
-    text-align: center;
-    
-}
 
-.fixed-window img {
-    max-width: 100%;
-    height: auto;
-}
-
-.white-circle {
-    width: 300px;
-    height: 300px;
-    background-color: white;
-    border-radius: 50%;
-}
+/* Cursor glow */
 
 @keyframes rotate {
     from {
@@ -226,7 +214,7 @@ a:hover {
     top: 50%;
     translate: -50% -50%;
     border-radius: 50%;
-    background: linear-gradient(to right, rgb(36, 123, 94), rgb(95, 34, 120));
+    background: linear-gradient(to right, rgb(21, 72, 55), rgb(55, 19, 69));
     animation: rotate 10s infinite;
     opacity: 0.8;
     z-index: -2;
@@ -243,3 +231,5 @@ a:hover {
     z-index: -1;
     backdrop-filter: blur(12vmax);
 }
+
+
